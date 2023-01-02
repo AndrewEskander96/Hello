@@ -32,6 +32,7 @@ jobs:
 workflows:
   Hello World by Andrew-WorkFlow:
     jobs:
+      - print-var
       - print-hello
       - print-world:
           requires:

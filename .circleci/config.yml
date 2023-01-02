@@ -21,7 +21,7 @@ jobs:
       - run: echo "Andrew's World"
   print-var:
     docker:
-     -  image: cimg/base:2020.01
+      - image: cimg/base:2020.01
      steps:
       - run: echo "MY ENV Variable is $OWNER"
      

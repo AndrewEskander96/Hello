@@ -18,7 +18,7 @@ jobs:
   print-world:
     docker: circleci/node:13.8.0
     steps:
-      run: echo "Andrew's World"
+      - run: echo "Andrew's World"
 
 
 # Invoke jobs via workflows

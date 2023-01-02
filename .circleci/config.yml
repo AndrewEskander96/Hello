@@ -23,7 +23,7 @@ jobs:
     docker:
       - image: cimg/base:2020.01
     steps:
-      - run: echo "MY ENV Variable is $OWNER"
+      - run: echo "MY ENV Variable is $MY_ENV_VAR"
      
 
 

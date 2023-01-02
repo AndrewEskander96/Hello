@@ -2,21 +2,25 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 commands:
+ # Define the commands.
   print_pipeline_id:
     description: "A Command to Get the Workflow id"
     steps:
       - run: echo "the WorkFlow ID is ${CIRCLE_WORKFLOW_ID}"
 defaults: &defaults
+ # Dfine the Anchor to add the the docker image through defaults (Anchors)
   docker:
     - image: circleci/node:13.8.0
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   print-var:
+   # Added the the docker image through defaults (Anchors)
     <<: *defaults
     steps:
       - run: echo "MY ENV Variable is $MY_ENV_VAR"
   save-output:
+  # Added the the docker image through defaults (Anchors)
     <<: *defaults
     steps:
       - run: echo "Hello to Andrew's World" > ~/output.txt
@@ -25,15 +29,18 @@ jobs:
           paths:
             - output.txt
   print-output:
+ # Added the the docker image through defaults (Anchors)
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/
       - run: cat ~/output.txt
   print-pipeline:
+  # Added the the docker image through defaults (Anchors)
     <<: *defaults
     steps:
       - print_pipeline_id
+# Added the command (print_pipeline_id)
      
 
 

@@ -41,7 +41,12 @@ jobs:
     steps:
       - print_pipeline_id
 # Added the command (print_pipeline_id)
-     
+  print-error:
+    <<: *defaults
+    steps:
+     - run: exit 1
+     - run: echo "Welcome Error"
+        when: on_fail
 
 
 # Invoke jobs via workflows
@@ -52,6 +57,7 @@ workflows:
       - print-var
       - print-pipeline
       - save-output
+      - print-error
       - print-output:
           requires:
             - save-output

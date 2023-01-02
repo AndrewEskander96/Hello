@@ -21,9 +21,9 @@ jobs:
       - run: echo "Andrew's World"
   print-var:
     docker:
-     -  image: circleci/node:13.8.0
+     -  image: cimg/base:2020.01
      steps:
-      - run: echo "$OWNER"
+      - run: echo "MY ENV Variable is $OWNER"
      
 
 
